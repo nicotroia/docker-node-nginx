@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  api0:
+    container_name: api0
+    build: ./api
+    environment:
+      MESSAGE: 'hello from instance 0'
+
+  api1:
+    container_name: api1
+    build: ./api
+    environment:
+      MESSAGE: 'hello from instance 1'
+
+  nginx0:
+    container_name: nginx0
+    build: ./nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+    links:
+      - api0
+      - api1
