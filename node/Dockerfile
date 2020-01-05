@@ -2,7 +2,7 @@ FROM mhart/alpine-node:latest as builder
 
 RUN apk update && apk add bash curl
 
-WORKDIR /api
+WORKDIR /node
 
 COPY package*.json ./
 

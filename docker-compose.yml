@@ -1,15 +1,15 @@
 version: '3.7'
 
 services:
-  api0:
-    container_name: api0
-    build: ./api
+  node0:
+    container_name: node0
+    build: ./node
     environment:
       MESSAGE: 'hello from instance 0'
 
-  api1:
-    container_name: api1
-    build: ./api
+  node1:
+    container_name: node1
+    build: ./node
     environment:
       MESSAGE: 'hello from instance 1'
 
