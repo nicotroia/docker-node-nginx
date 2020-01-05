@@ -2,6 +2,8 @@ FROM nginx:alpine
 
 RUN apk update && apk add bash
 
+ADD . /nginx
+
 WORKDIR /nginx
 
 COPY . ./
