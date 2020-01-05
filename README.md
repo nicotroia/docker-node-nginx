@@ -5,6 +5,7 @@ This sample project includes a basic node (express) app, spawned on 2 instances,
 ## Installation
 
 * Install [Docker](https://docs.docker.com/docker-for-mac/install/)
+* `cp .env.sample .env` and modify if necessary (read on)
 
 ## Create machine (optional)
 
@@ -14,7 +15,7 @@ This sample project includes a basic node (express) app, spawned on 2 instances,
   - If you created a machine on a remote host you'll need to copy files there
     * Find pwd of ssh user `docker-machine ssh my-project pwd` (for me, `/root`)
     * Copy project files `docker-machine scp -r ./ my-project:/root/`
-    * Modify .env to set remote directory `ROOT=/root`
+    * Modify .env to set project root on host `ROOT=/root`
 
 ## Start
 
