@@ -8,6 +8,6 @@ WORKDIR /nginx
 
 COPY . ./
 
-EXPOSE 80
+EXPOSE ${NGINX_PORT}
 
 CMD nginx -g 'daemon off;'

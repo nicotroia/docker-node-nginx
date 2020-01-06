@@ -5,19 +5,22 @@ services:
     container_name: node0
     build: ./node
     environment:
+      NODE_PORT: '${NODE_PORT}'
       MESSAGE: 'hello from instance 0'
-
+  
   node1:
     container_name: node1
     build: ./node
     environment:
+      NODE_PORT: '${NODE_PORT}'
       MESSAGE: 'hello from instance 1'
-
+  
   nginx0:
     container_name: nginx0
     build: ./nginx
-    env_file: ./.env
+    environment: 
+      NODE_PORT: '${NODE_PORT}'
     ports:
-      - '80:80'
+      - '${NGINX_PORT}:80'
     volumes:
       - ${ROOT}/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
